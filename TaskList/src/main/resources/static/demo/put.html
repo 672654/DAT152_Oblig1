@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="shortcut icon" href="#">
+
+    <script type="module" src="js/put.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Demo - modify status of task</title>
+    <link rel="stylesheet" type="text/css" href="css/put.css">
+
+</head>
+
+<body>
+    <h1>Demo - modify status of task</h1>
+
+    <div id="root">
+        <form>
+            <fieldset>
+                <legend>Fill in data for task</legend>
+                <input type="number" min="1" size="5" value="1">
+                <select>
+                    <option value="0" selected>&lt;Select task status&gt;</option>
+                    <option value="WAITING">WAITING</option>
+                    <option value="ACTIVE">ACTIVE</option>
+                    <option value="DONE">DONE</option>
+                </select>
+                <button type="button">PUT data</button>
+            </fieldset>
+        </form>
+
+        <p>PUT <span></span></p>
+        <pre></pre>
+    </div>
+</body>
+
+</html>
