@@ -154,7 +154,7 @@ class TaskList extends HTMLElement {
         if (confirmed) {
           this._changestatusCallback(task.id, select.value);
         } else {
-          // Revert select to previous value if not confirmed
+          // hvis det ikke går, så settes select sin verdi til den opprinnelige statusen.
           select.value = task.status;
         }
       }
