@@ -4,7 +4,7 @@ import '../tasklist/tasklist.js';
 
 const template = document.createElement("template");
 template.innerHTML = `
-  <!--<link rel="stylesheet" type="text/css" href="${import.meta.url.match(/.*\//)[0]}/taskview.css"/>-->
+  <link rel="stylesheet" type="text/css" href="${import.meta.url.match(/.*\//)[0]}/taskview.css"/>
 
   <h1>Tasks</h1>
 

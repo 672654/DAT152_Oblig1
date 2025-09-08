@@ -1,0 +1,57 @@
+/* taskbox.css: Styling for task-box komponenten */
+
+:host {
+  display: block;
+}
+
+dialog {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  padding: 2rem;
+  background: #fff;
+  min-width: 320px;
+  max-width: 90vw;
+}
+
+span {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+select {
+  width: 100%;
+  padding: 0.4rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+
+button[type="submit"] {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background: #217dbb;
+}

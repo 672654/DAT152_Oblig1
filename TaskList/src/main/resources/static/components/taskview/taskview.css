@@ -1,0 +1,40 @@
+/* taskview.css: */
+
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#message {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+#newtask button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+#newtask button:hover {
+  background: #217dbb;
+}
+
+#newtask button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
