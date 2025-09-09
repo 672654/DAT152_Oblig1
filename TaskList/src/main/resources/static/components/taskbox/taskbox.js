@@ -1,5 +1,7 @@
 
 
+
+
 const template = document.createElement("template");
 template.innerHTML = `
  <link rel="stylesheet" type="text/css"href="${import.meta.url.match(/.*\//)[0]}/taskbox.css"/>
@@ -46,7 +48,8 @@ class TaskBox extends HTMLElement {
     button.addEventListener("click", (e) => {
       //Bruker preventdefault, standard er å sende inn skjema...
       e.preventDefault();
-      const title = this._shadowroot.querySelector("input").value;
+      const input = this._shadowroot.querySelector("input");
+      const title = input.value;
       const status = this._shadowroot.querySelector("select").value;
       console.log(`Add task '${title}' with status ${status}.`);
       if (this.#addNewTaskCallback) {
@@ -56,6 +59,8 @@ class TaskBox extends HTMLElement {
         };
         this.#addNewTaskCallback(task);
       }
+      // Tøm inputfeltet etter at task er lagt til
+      input.value = "";
     });
 
 
@@ -113,11 +118,10 @@ class TaskBox extends HTMLElement {
    * @public
    */
   close() {
-
     console.log("Close the task box");
-
+    // Tøm inputfeltet når taskbox lukkes
+    this._shadowroot.querySelector("input").value = "";
     this._dialog.close();
-
   }
 
 

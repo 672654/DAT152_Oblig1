@@ -1,4 +1,5 @@
 
+
 import '../taskbox/taskbox.js';
 import '../tasklist/tasklist.js';
 
@@ -63,12 +64,14 @@ class TaskView extends HTMLElement {
     this.fetchTasks();
 
 
+    //Legger til eventlistener på knappen for å åpne dialog
     const button = this.#shadowroot.querySelector("#newtask button");
     button.addEventListener("click", () => {
       this.#taskbox.show();
     });
 
 
+    //Legger til callback funksjon for å få data fra taskbox
     this.#taskbox.addNewTaskCallback((newTask) => {
       console.log(`Have '${newTask.title}' with status ${newTask.status}.`);
       //med eller uten bind? Arrowfunskjon bruker this fra omgivende scope så trenger ikke bind her.
@@ -77,12 +80,13 @@ class TaskView extends HTMLElement {
       this.#taskbox.close();
     });
 
+    //Legger til callback funksjon for å få data fra tasklist
     this.#tasklist.changestatusCallback((id, newstatus) => {
       console.log(`Change status for task ${id} to ${newstatus}.`);
       this.updateTaskStatus(id, newstatus);
     });
 
-    //Bruker bind for å binde this til TaskView klassen. skiller seg litt ut fra de andre, men gjør det samme.
+    //Legger til callback funksjon for å få data fra tasklist
     this.#tasklist.deletetaskCallback(this.deleteTask.bind(this));
   }
 
@@ -186,6 +190,7 @@ class TaskView extends HTMLElement {
         const responsedata = await response.json();
         console.log("Task created:", responsedata);
         this.#tasklist.showTask(responsedata.task);
+        this.#setMessage();
       }
     }
     catch (error) {
